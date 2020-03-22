@@ -1,0 +1,26 @@
+<%- include ('includes/header.ejs') -%>
+<div class="products-catagories-area clearfix">
+    <div class="amado-pro-catagory clearfix">
+    <%  if(typeof product === 'object'){
+            for(let i in product){ %>
+        <div class="single-products-catagory clearfix">
+            <a href="shop_item?id=<%= product[i].id %>">
+                <img src="img/product-img/<%= product[i].header_img %>" alt=""/>
+                <!-- Hover Content -->
+                <div class="hover-content">
+                    <div class="line"></div>
+                    <p>From $180</p>
+                    <h4><%= product[i].header %></h4>
+                </div>
+            </a>
+        </div>
+    <% 
+            }
+        }
+        else {
+    %>
+            Տվյալ պահին ոչինչ չի վաճառվում
+    <%  } %>
+    </div>
+</div>
+<%- include ('includes/footer.ejs') -%>

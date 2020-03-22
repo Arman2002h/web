@@ -1,0 +1,92 @@
+<%- include ('includes/header.ejs') -%>
+<!-- <div class="container register" >
+	<div class="login__input-box input-box row">
+		<div class="col-lg-6 mx-auto">
+			<br><h1 class="my-10">REGISTR</h1><br>
+			<form action="/user/register" method="POST">
+				<div class="row">
+					<div class="col-lg-6 my-2">
+						<input type="text" name="lname" class="form-control" placeholder="your lastname" required/>
+					</div>
+					<div class="col-lg-6 my-2">
+						<input type="text" name="fname" class="form-control" placeholder="your frstname" required/>
+					</div>
+				</div>
+				<input type="text" name="nickname"class="form-control" placeholder="your nickname" required/>
+				<input type="email" name="email" class="form-control" placeholder=" your email" required/>
+				<input type="password" name="pass" class="form-control" placeholder=" your password" required/>
+				<input type="password" name="rpass" class="form-control" placeholder=" repit password" required/>
+				<div class="row">
+					<div class="col-6">
+						<a href="/login"><h3 class="text text-info text">Login</h3></a>
+					</div>
+					<div class="col-6">
+						<input type="submit" name="reg_submit" style="font-size: 24px" 
+						class="w-100 h-100 btn btn-outline-primary" value="send"/>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+-->
+<div class="cart-table-area section-padding-100">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 col-lg-12">
+				<div class="checkout_details_area mt-50 clearfix">
+					<div class="cart-title">
+						<pre><h2>Login</h2></pre>
+					</div>
+					<form action="/user/register" method="POST">
+						<div class="row">
+							<div class="col-12 mb-3">
+								<div class="row">
+									<div class="col-sm-6 col-12">
+										<input type="text" class="form-control" name="lname" id="lastname"  placeholder="lastname" value="" required>
+									</div>
+									<div class="col-sm-6 col-12">
+										<input type="text" class="form-control" name="fname" id="frstname"  placeholder="frstname" value="" required>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="col-12 mb-3">
+								<div class="row">
+									<div class="col-sm-4 col-12">
+										<input type="number" class="form-control" name="day" id="day" placeholder="day" value="" required/>
+									</div>
+									<div class="col-sm-4 col-12">
+										<input type="number" class="form-control" name="moth" id="moth" placeholder="moth" value="" required/>
+									</div>
+									<div class="col-sm-4 col-12">
+										<input type="number" class="form-control" name="yeer" id="yeer" placeholder="yeer" value="" required/>
+									</div>
+								</div>
+							</div> -->
+							<div class="col-12 mb-3">
+								<input type="email" name="email" class="form-control" id="email" placeholder="email" value="" required/>
+							</div>
+							<div class="col-12 mb-3">
+								<input type="text" name="nickname" class="form-control" id="nickname" placeholder="nickname" value="" required/>
+							</div>
+							<div class="col-12 mb-3">
+								<div class="row">
+									<div class="col-sm-6 col-12">
+										<input type="password" name="pass" class="form-control mb-3" id="password" placeholder="password" value="" required>
+									</div>
+									<div class="col-sm-6 col-12">
+										<input type="password" name="rpass" class="form-control mb-3" id="password1" placeholder="repit password" value="" required>
+									</div>
+								</div>
+							</div>
+							<div class="col-12 mb-3">
+								<input type="submit" name="reg_submit" class="btn amado-btn w-100" id="submit" value="Login">
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include ('includes/footer.ejs') -%>
