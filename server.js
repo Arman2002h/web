@@ -10,7 +10,6 @@ const register = require('./app/register.js');
 const shop = require('./app/shop.js')('shop.ejs');
 const home = require('./app/shop.js')('home.ejs');
 
-const admin = require('./app/ADMIN/admin.js');
 
 // console.log()
 let session = require('cookie-session');
@@ -37,8 +36,11 @@ app.post('/user/:f', user);
 
 app.get('/',  home);
 app.get('/shop',  shop);
-app.get('/admin', admin)
+
+app.get('/admTools', ( req, res)=>
+ res.
+);
+
 app.get('*', ( req, res)=>res.redirect('/'));
-app.post('*', ( req, res)=>res.redirect('/'));
 
 app.listen(PORT,err => console.log(err || `useing port ${PORT}`));
