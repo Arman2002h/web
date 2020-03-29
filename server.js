@@ -9,7 +9,7 @@ const register = require('./app/register.js');
 
 const shop = require('./app/shop.js')('shop.ejs');
 const home = require('./app/shop.js')('home.ejs');
-
+const tools =  require('./app/Admin/admin.js');
 
 // console.log()
 let session = require('cookie-session');
@@ -37,9 +37,7 @@ app.post('/user/:f', user);
 app.get('/',  home);
 app.get('/shop',  shop);
 
-app.get('/admTools', ( req, res)=>
- res.
-);
+app.get('/admTools', tools);
 
 app.get('*', ( req, res)=>res.redirect('/'));
 

@@ -1,101 +1,59 @@
 <!DOCTYPE html>
-<html lang="hy">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" contents="width=device-width, initial-scale=1.0">
+	<title>SHOP</title>
 
-    <!-- Title  -->
-    <title>Amado - Furniture Ecommerce Template | Shop</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <!-- Favicon  -->
-    <link rel="icon" href="img/core-img/favicon.ico">
-
-    <!-- Core Style CSS -->
-    <link rel="stylesheet" href="css/core-style.css">
-    <link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="search-wrapper section-padding-100">
-        <div class="search-close">
-            <i class="fa fa-close" aria-hidden="true"></i>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="search-content">
-                        <form action="/" method="get">
-                            <input type="search" name="search" id="search" placeholder="ինչ կցանկանաք որոնել">
-                            <button type="submit"><img src="img/core-img/search.png" alt=""></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Search Wrapper Area End -->
-
-    <!-- ##### Main Content Wrapper Start ##### -->
-    <div class="main-content-wrapper d-flex clearfix">
-
-        <!-- Mobile Nav (max width 767px)-->
-        <div class="mobile-nav">
-            <!-- Navbar Brand -->
-            <div class="amado-navbar-brand">
-                <a href="/"><img src="img/core-img/logo.png" alt=""></a>
-            </div>
-            <!-- Navbar Toggler -->
-            <div class="amado-navbar-toggler">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-
-        <!-- Header Area Start -->
-        <header class="header-area clearfix">
-            <!-- Close Icon -->
-            <div class="nav-close">
-                <i class="fa fa-close" aria-hidden="true"></i>
-            </div>
-            <!-- Logo -->
-            <div class="logo">
-                <a href="/"><img src="img/core-img/logo.png" alt=""></a>
-            </div>
-            <nav class="amado-nav">
-                <ul>
-                    <li><a href="/">Գլխավոր էջ</a></li>
-                    <li ><a href="/shop">Խանուտ</a></li>
-                    <% if(typeof user == 'object'){{if(user.status == "admin") %><li ><a href="/admin">ADMIN_TOOLS</a></li><% }} %>
-                </ul>
-            </nav>
-            <!-- Cart Menu --> 
-            <div class="cart-fav-search mb-100">
-                <a href="cart" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Արկղ <!--<span>(0)</span>--></a>
-                <!-- <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt=""> Favourite</a> -->
-                <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> որոնում</a>
-            </div>
-            <!-- Button Group -->
-            <div class="amado-btn-group mt-30 mb-100">
-                <% if(typeof user == 'object'){ %>
-                    <%= user['nickname'] %>
-                    <p><%= user['lname']+' '+user['fname'] %><br>
-                        <%= user['email'] %></p>
-                            <a href="/login" class="btn amado-btn mb-15">դուրս գալ</a>
-                            <a href="/register" class="btn amado-btn active">Ստեղծել նոր էջ</a>
-                        
-                    <% } else { %>
-                    <a href="/login" class="btn amado-btn mb-15">Մուտքագրվել</a>
-                    <button class="btn amado-btn active">Ստեղծել նոր էջ</a>
-                <% } %>
-            </div> 
-            <!-- Social Button -->
-            <div class="social-info d-flex justify-content-between">
-                <!-- <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a> -->
-                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            </div>
-        </header>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="/"> 
+				<img  src="https://i.pinimg.com/originals/33/b8/69/33b869f90619e81763dbf1fccc896d8d.jpg" alt="Logo" 
+				style="width: 48px;"> 
+				Header
+			</a>
+			<div class="collapse navbar-collapse" id="HeaderNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="/">Home </a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/shop">Shop </a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="user" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  User
+						</a>
+						<div class="dropdown-menu" aria-labelledby="user">
+						  	<a class="dropdown-item" href="/register">register</a>
+						  	<a class="dropdown-item" href="/login">login</a>
+						</div>
+					  </li>
+				</ul>
+			</div>
+			<form style="float: right;" class="form-inline">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#HeaderNav" aria-controls="HeaderNav" aria-expanded="true" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+		</nav>
+		<article></article>
