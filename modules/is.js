@@ -17,7 +17,7 @@ module.exports.login = user => {
 }
 module.exports.products = items => {
 	for(let i in items)
-		if(is(items[i],['header','content','header_img','hover_img','3_img','4_img']) == false)
+		if(is(items[i],['header','content','header_img','price']) == false)
 			return false;
 
 	return true;

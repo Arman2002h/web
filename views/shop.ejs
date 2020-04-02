@@ -1,2 +1,67 @@
 <%- include ("includes/header.ejs") %> -%>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card my-4 box-shadow">
+                <div class="card-header">Filters</div>
+                <div class="card-body">
+                    <form action="">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12 col-lg-4">
+                                    <div class="row">
+                                        <div class="col-12 mb-4">
+                                            <input type="text" class="form-control" placeholder="Search"/>
+                                        </div>
+                                        <div class="col-lg-6 col-12 mb-4">
+                                            <input type="number" class="form-control" placeholder="Price minemum"/>
+                                        </div>
+                                        <div class="col-lg-6 col-12 mb-4">
+                                            <input type="number" class="form-control" placeholder="Price maximum"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <div class="row">
+                                        <div class="col-12 mb-4">
+                                            <select id="cars" class="form-control">
+                                                <option value="false">Categore</option>
+                                                <option value="saab">Saab</option>
+                                                <option value="mercedes">Mercedes</option>
+                                                <option value="audi">Audi</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 mb-4">
+                                            <select id="cars" class="form-control">
+                                                <option value="false">Brend</option>
+                                                <option value="saab">Saab</option>
+                                                <option value="mercedes">Mercedes</option>
+                                                <option value="audi">Audi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <div class="row">
+                                        <div class="col-12 mb-4">
+                                            <input type="number" class="form-control" placeholder="id">
+                                        </div>
+                                        <div class="col-12 mb-4">
+                                            <input type="submit" class="form-control btn btn-success" id="filter-submit" value="send"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                <%- include ("articles/product.ejs") %> -%>
+            </div>
+        </div>
+    </div>
+</div>
 <%- include ("includes/footer.ejs") %> -%>
