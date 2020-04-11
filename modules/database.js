@@ -30,26 +30,28 @@ module.exports.findProduct = findProduct = (obj) => {
     let sql = '';
     if(!obj || !obj.table)return [];
     sql += 'SELECT * FROM `'+ obj.table+'`  WHERE 1'
-    if(obj.find){
+
+    if(obj.find && obj.find != '#'){
         sql += ' AND '
         for(let i in obj.find)if(obj.find[i]!='#')
             sql += `\`${i}\` = '${obj.find[i]}' AND `
         sql +='1'
     }
-    if(obj.priceRange)
+
+    if(obj.priceRange && obj.priceRange != '#')
         sql += ' AND price > ' + obj.priceRange.min + ' AND price < ' + obj.priceRange.max+' '
    
     let searchSQL = '';
-    if(obj.search) searchSQL += "SELECT * FROM `" + obj.table + "` WHERE header LIKE '"+ obj.search +"%'"
+    if(obj.search && obj.search != '#') searchSQL += "SELECT * FROM `" + obj.table + "` WHERE header LIKE '"+ obj.search +"%'"
     let data = [];
     db.query(sql,( err, res)=>{
-        if(searchSQL == '')return (obj.callback || (res => {}))(res);
+        if(searchSQL == '')return (obj.callback || (res => {}))(res || [], sql);
         db.query(searchSQL, (err, res1) => {
             for(let i in res)
                 for(let j in res1)
                     if(res[i].id == res1[j].id)
                         data.push(res[i]);
-            (obj.callback || (res => {}))(data);
+            (obj.callback || (res => {}))(data || [],sql, searchSQL);
         });
     });
 }
