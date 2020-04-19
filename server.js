@@ -12,6 +12,8 @@ const register = require('./app/register.js');
 const shop = require('./app/shop.js')('shop.ejs', 50);
 const home = require('./app/shop.js')('home.ejs');
 
+const admin = require('./app/admin.js')
+
 let session = require('cookie-session');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -38,6 +40,7 @@ app.post('/updateFilte', filter);
 app.get('/',  home);
 app.get('/shop',  shop);
 
+app.get('/admin/:f',admin)
 app.get('*', ( req, res)=>res.redirect('/'));
 
 app.listen(PORT,err => console.log(err || `useing port ${PORT}`));

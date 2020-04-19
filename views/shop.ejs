@@ -1,5 +1,4 @@
 <%- include ("includes/header.ejs") %> -%>
-
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -12,13 +11,18 @@
                                 <div class="col-12 col-lg-4">
                                     <div class="row">
                                         <div class="col-12 mb-4">
-                                            <input type="text" name="Search" class="form-control" placeholder="Search"/>
+                                            <input type="text" name="Search" class="form-control" placeholder="Search"
+                                                value="<%= (filter.search!='#')?filter.search:''  %>" />
                                         </div>
                                         <div class="col-lg-6 col-12 mb-4">
-                                            <input type="number" name="P_mine" class="form-control" placeholder="Price minemum"/>
+                                            <input type="number" name="P_mine" class="form-control"
+                                                placeholder="Price minemum"
+                                                value="(filter.priceRange!='#')?filter.priceRange.mine:''" />
                                         </div>
                                         <div class="col-lg-6 col-12 mb-4">
-                                            <input type="number" name="P_max" class="form-control" placeholder="Price maximum"/>
+                                            <input type="number" name="P_max" class="form-control"
+                                                placeholder="Price maximum"
+                                                value="(filter.priceRange!='#')?filter.priceRange.max:''" />
                                         </div>
                                     </div>
                                 </div>
@@ -27,17 +31,17 @@
                                         <div class="col-12 mb-4">
                                             <select id="categorie" name="categorie" class="form-control">
                                                 <option value="false">Categore</option>
-                                                <option value="saab">Saab</option>
-                                                <option value="mercedes">Mercedes</option>
-                                                <option value="audi">Audi</option>
+                                                <% for(let i in categories){ %>
+                                                    <option value="<%= categories[i].id %>"><%= categories[i].name %></option>
+                                                <% } %>
                                             </select>
                                         </div>
                                         <div class="col-12 mb-4">
                                             <select id="brend" name="brend" class="form-control">
                                                 <option value="false">Brend</option>
-                                                <option value="saab">Saab</option>
-                                                <option value="mercedes">Mercedes</option>
-                                                <option value="audi">Audi</option>
+                                                <% for(let i in brends){ %>
+                                                    <option value="<%= categories[i].id %>"><%= brends[i].name %></option>
+                                                <% } %>
                                             </select>
                                         </div>
                                     </div>
@@ -45,10 +49,12 @@
                                 <div class="col-12 col-lg-4">
                                     <div class="row">
                                         <div class="col-12 mb-4">
-                                            <input type="number" name="id" class="form-control" placeholder="id">
+                                            <input type="number" name="id" class="form-control" placeholder="id"
+                                                value="<%= (filter.id!='#')?filter.id:''  %>" />
                                         </div>
                                         <div class="col-12 mb-4">
-                                            <input type="submit" class="form-control btn btn-success" id="filter-submit" value="send"/>
+                                            <input type="submit" class="form-control btn btn-success" id="filter-submit"
+                                                value="send" />
                                         </div>
                                     </div>
                                 </div>
