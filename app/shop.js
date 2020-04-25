@@ -1,6 +1,7 @@
 let db  = require('../modules/database');
 let is = require('../modules/is');
 let Filter = require('../modules/class').Filter
+
 module.exports = (targetFile, max) => ((req, res) => {
     let filter = req.session.filter || new Filter({
         Search: '',
@@ -19,6 +20,7 @@ module.exports = (targetFile, max) => ((req, res) => {
             },
             'priceRange':filter.priceRange,'search':filter.search,
             'callback': data => {
+                
                 let max_data = max || 5; let room = req.query.room_id || 0;
                 let ReturnProductsData = [];
                 if(room * max_data >= data.length)

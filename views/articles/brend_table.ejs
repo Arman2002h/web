@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">name</th>
+            <th scope="col">update</th>
+            <th scope="col">delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if(typeof product == "object"){
+            for(let i = 0; i != brends.length; i++){ %>
+        <tr>
+            <th scope="row"><%= brends[i].id %></th>
+            <td><%= brends[i].name %></td>
+            <td><a href="#">upd</a></td>
+            <td><a href="#">del</a></td>
+        </tr>
+        <%
+                }
+            }
+        %>
+    </tbody>
+</table>

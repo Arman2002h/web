@@ -1,0 +1,43 @@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Header</th>
+            <th scope="col">Content</th>
+            <th scope="col">Price</th>
+            <th scope="col">Brend</th>
+            <th scope="col">Categ</th>
+            <th scope="col">upd</th>
+            <th scope="col">delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if(typeof product == "object"){
+            for(let i = 0; i != product.length; i++){ %>
+        <tr>
+            <th scope="row"><%= product[i].id %></th>
+            <td><%= product[i].header %></td>
+            <td><%= product[i].content %></td>
+            <td><%= product[i].price %></td>
+            <td><%= product[i].brend %></td>
+            <td><%= product[i].categorie %></td>
+            <td><a href="#">upd</a></td>
+            <td><a href="#">del</a></td>
+        </tr>
+        <%
+            }
+        }
+        %>
+    </tbody>
+</table>
+<nav class="navbar product_nav">
+    <ul class="navbar-nav">
+        
+        <% for(let i = 0; i != config.max_rooms; i++){ %>
+        <li class="nav-item">
+            <a href="/admin/desktop?room_id=<%= i %>" class="nav-link"><%= i %></a>
+        </li>
+        <% } %>
+    </ul>
+</nav>
